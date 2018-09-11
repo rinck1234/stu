@@ -33,4 +33,14 @@ public class StudentServiceImpl implements StudentService {
 		}
 	}
 
+	public void delete(int id) throws SQLException {
+		// TODO Auto-generated method stub
+		StudentDao dao = new StudentDaoImpl();
+		try {
+			dao.delete(id);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }

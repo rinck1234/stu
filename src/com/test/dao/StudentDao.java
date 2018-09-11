@@ -19,4 +19,7 @@ public interface StudentDao {
 	List<Student> findAll() throws SQLException, PropertyVetoException;
 	//添加到数据库的学生对象
 	void insert(Student student) throws SQLException, PropertyVetoException;
+	
+	//根据ID删除数据库的学生对象
+	void delete(int id) throws SQLException, PropertyVetoException;
 }

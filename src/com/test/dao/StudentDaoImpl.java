@@ -39,4 +39,13 @@ public class StudentDaoImpl implements StudentDao{
 			student.getInfo()
 			);
 	}
+
+
+	public void delete(int id) throws SQLException, PropertyVetoException {
+		// TODO Auto-generated method stub
+		QueryRunner runner = new QueryRunner(JDBCUtils.getDataSource());
+		
+		runner.update("delete from stu where id=?",id);
+		
+	}
 }

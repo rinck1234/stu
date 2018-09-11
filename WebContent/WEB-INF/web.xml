@@ -29,4 +29,14 @@
     <servlet-name>StudentAddServlet</servlet-name>
     <url-pattern>/StudentAddServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentDeleteServlet</display-name>
+    <servlet-name>StudentDeleteServlet</servlet-name>
+    <servlet-class>com.test.servlet.StudentDeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentDeleteServlet</servlet-name>
+    <url-pattern>/StudentDeleteServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

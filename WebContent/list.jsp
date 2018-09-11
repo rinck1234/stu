@@ -7,6 +7,16 @@
 <head>
 <meta charset="UTF-8">
 <title>学生列表页面</title>
+
+<script type="text/javascript">
+	function doDelete(id){
+		var flag = confirm("是否确定删除？");
+		if(flag){
+			window.location.href="StudentDeleteServlet?id="+id;
+		}
+	}
+</script>
+
 </head>
 <body>
 	
@@ -36,7 +46,7 @@
 			<td>${stu.birthday }</td>
 			<td>${stu.hobby }</td>
 			<td>${stu.info }</td>
-			<td><a href="#">更新</a>	<a href="#">删除</a></td>
+			<td><a href="#">更新</a>	<a href="#" onclick="doDelete(${stu.id})">删除</a></td>
 		</tr>
 		</c:forEach>
 	</table>

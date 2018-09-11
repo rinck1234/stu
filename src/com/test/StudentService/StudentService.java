@@ -10,4 +10,6 @@ public interface StudentService {
 	List<Student> findAll() throws SQLException;
 	
 	void insert(Student student) throws SQLException;
+	
+	void delete(int id)throws SQLException;
 }
