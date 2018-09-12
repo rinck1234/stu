@@ -39,4 +39,24 @@
     <servlet-name>StudentDeleteServlet</servlet-name>
     <url-pattern>/StudentDeleteServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentEditServlet</display-name>
+    <servlet-name>StudentEditServlet</servlet-name>
+    <servlet-class>com.test.servlet.StudentEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentEditServlet</servlet-name>
+    <url-pattern>/StudentEditServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentUpdateServlet</display-name>
+    <servlet-name>StudentUpdateServlet</servlet-name>
+    <servlet-class>com.test.servlet.StudentUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentUpdateServlet</servlet-name>
+    <url-pattern>/StudentUpdateServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

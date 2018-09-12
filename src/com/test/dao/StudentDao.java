@@ -22,4 +22,9 @@ public interface StudentDao {
 	
 	//根据ID删除数据库的学生对象
 	void delete(int id) throws SQLException, PropertyVetoException;
+	
+	//根据ID修改数据库的学生对象
+	void update(Student student) throws SQLException, PropertyVetoException;
+	
+	Student findStuById(int id) throws SQLException, PropertyVetoException;
 }

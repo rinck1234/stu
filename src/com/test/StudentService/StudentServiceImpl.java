@@ -42,5 +42,27 @@ public class StudentServiceImpl implements StudentService {
 			e.printStackTrace();
 		}
 	}
+	
+	public Student findStuById(int id) throws SQLException{
+		StudentDao dao = new StudentDaoImpl();
+		try {
+			return dao.findStuById(id);
+		} catch (PropertyVetoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	public void update(Student student) throws SQLException {
+		// TODO Auto-generated method stub
+		StudentDao dao = new StudentDaoImpl();
+		try {
+			dao.update(student);
+		}catch (PropertyVetoException e) {
+			e.printStackTrace();
+		}
+		
+	}
 
 }

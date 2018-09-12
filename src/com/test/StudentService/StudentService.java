@@ -12,4 +12,8 @@ public interface StudentService {
 	void insert(Student student) throws SQLException;
 	
 	void delete(int id)throws SQLException;
+	
+	Student findStuById(int id) throws SQLException;
+	
+	void update(Student student) throws SQLException;
 }
