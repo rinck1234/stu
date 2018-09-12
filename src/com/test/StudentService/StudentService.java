@@ -1,5 +1,6 @@
 package com.test.StudentService;
 
+import java.beans.PropertyVetoException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -16,4 +17,6 @@ public interface StudentService {
 	Student findStuById(int id) throws SQLException;
 	
 	void update(Student student) throws SQLException;
+	
+	List<Student> search(String name,String sex) throws SQLException, PropertyVetoException;
 }

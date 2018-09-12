@@ -27,4 +27,6 @@ public interface StudentDao {
 	void update(Student student) throws SQLException, PropertyVetoException;
 	
 	Student findStuById(int id) throws SQLException, PropertyVetoException;
+	
+	List<Student> search(String name,String sex) throws SQLException, PropertyVetoException;
 }

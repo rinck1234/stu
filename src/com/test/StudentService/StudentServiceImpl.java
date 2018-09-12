@@ -65,4 +65,11 @@ public class StudentServiceImpl implements StudentService {
 		
 	}
 
+	public List<Student> search(String name, String sex) throws SQLException, PropertyVetoException {
+		// TODO Auto-generated method stub
+		StudentDao dao = new StudentDaoImpl();
+		List<Student> list = dao.search(name,sex);
+		return list;
+	}
+
 }

@@ -59,4 +59,14 @@
     <servlet-name>StudentUpdateServlet</servlet-name>
     <url-pattern>/StudentUpdateServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentSearchServlet</display-name>
+    <servlet-name>StudentSearchServlet</servlet-name>
+    <servlet-class>com.test.servlet.StudentSearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentSearchServlet</servlet-name>
+    <url-pattern>/StudentSearchServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
