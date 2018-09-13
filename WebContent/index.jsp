@@ -7,6 +7,7 @@
 <title>简易学生信息管理系统</title>
 </head>
 <body>
-<h3><a href="StudentListServlet">显示所有学生</a></h3>
+<h3><a href="StudentListServlet">显示所有学生</a></h3><br>
+<h3><a href="StudentPageListServlet?currentpage=1&listperpage=10">分页显示学生</a></h3>
 </body>
 </html>

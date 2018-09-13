@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.test.dao.StudentDao;
 import com.test.dao.StudentDaoImpl;
+import com.test.domain.BeanPage;
 import com.test.domain.Student;
 
 public class StudentServiceImpl implements StudentService {
@@ -70,6 +71,23 @@ public class StudentServiceImpl implements StudentService {
 		StudentDao dao = new StudentDaoImpl();
 		List<Student> list = dao.search(name,sex);
 		return list;
+	}
+
+	public BeanPage findStudentByPage(int currentpage, int listperpage) throws PropertyVetoException, SQLException {
+		// TODO Auto-generated method stub
+		BeanPage<Student> beanpage = new BeanPage<Student>();
+		StudentDao dao = new StudentDaoImpl();
+		
+		int total_list = dao.findCount();
+		beanpage.setTotalList(total_list);
+		beanpage.setCurrentpage(currentpage);
+		beanpage.setListperpage(listperpage);
+		
+		List<Student> stu = dao.findPage(currentpage, listperpage);
+		beanpage.setList(stu);
+		
+		beanpage.setTotalpage(total_list % listperpage == 0 ? total_list/listperpage : (total_list/listperpage+1));
+		return beanpage;
 	}
 
 }

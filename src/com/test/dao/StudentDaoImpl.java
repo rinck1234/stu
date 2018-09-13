@@ -8,6 +8,7 @@ import java.util.List;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import com.test.domain.Student;
 import com.test.utils.JDBCUtils;
@@ -93,5 +94,23 @@ public class StudentDaoImpl implements StudentDao{
 		QueryRunner runner = new QueryRunner(JDBCUtils.getDataSource());
 		return runner.query(sql, new BeanListHandler<Student>(Student.class),list.toArray());
 		
+	}
+
+
+	public List<Student> findPage(int currentpage, int listperpage) throws SQLException, PropertyVetoException {
+		// TODO Auto-generated method stub
+		String sql = "select * from stu limit ? offset ?";
+		QueryRunner runner = new QueryRunner(JDBCUtils.getDataSource());
+		return runner.query(sql, new BeanListHandler<Student>(Student.class),listperpage,(currentpage-1)*listperpage);
+		
+	}
+
+
+	public int findCount() throws PropertyVetoException, SQLException {
+		// TODO Auto-generated method stub
+		String sql = "select count(*) from stu";
+		QueryRunner runner = new QueryRunner(JDBCUtils.getDataSource());
+		Long result = (Long)runner.query(sql, new ScalarHandler());
+		return result.intValue();
 	}
 }

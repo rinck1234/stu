@@ -4,6 +4,7 @@ import java.beans.PropertyVetoException;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.test.domain.BeanPage;
 import com.test.domain.Student;
 
 public interface StudentService {
@@ -19,4 +20,6 @@ public interface StudentService {
 	void update(Student student) throws SQLException;
 	
 	List<Student> search(String name,String sex) throws SQLException, PropertyVetoException;
+
+	BeanPage findStudentByPage(int currentpage, int listperpage) throws PropertyVetoException, SQLException;
 }

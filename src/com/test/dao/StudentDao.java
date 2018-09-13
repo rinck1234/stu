@@ -10,13 +10,12 @@ import java.util.List;
 
 public interface StudentDao {
 
-	/**
-	 * 查询所有
-	 * @return
-	 * @throws SQLException 
-	 * @throws PropertyVetoException 
-	 */
+	//一次查询指定条数
+	List<Student> findPage(int currentpage, int listperpage)throws SQLException, PropertyVetoException;
+	
+	//一次查询所有
 	List<Student> findAll() throws SQLException, PropertyVetoException;
+	
 	//添加到数据库的学生对象
 	void insert(Student student) throws SQLException, PropertyVetoException;
 	
@@ -29,4 +28,6 @@ public interface StudentDao {
 	Student findStuById(int id) throws SQLException, PropertyVetoException;
 	
 	List<Student> search(String name,String sex) throws SQLException, PropertyVetoException;
+
+	int findCount() throws PropertyVetoException, SQLException;
 }
